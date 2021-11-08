@@ -1,5 +1,6 @@
 // Enumeration, criação, valores que não muda!
 // Constantes.
+// Cuidados com a declaração de enums,pois o padrão que vem no Type,alterada a ordem pode ter erros
 export var DiasDaSemana;
 (function (DiasDaSemana) {
     DiasDaSemana[DiasDaSemana["DOMINGO"] = 0] = "DOMINGO";
