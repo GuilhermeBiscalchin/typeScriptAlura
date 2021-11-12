@@ -2,7 +2,7 @@
 
 //Classe abstrata 'abstract', previnindo de criar uma instância dessa classe, apenas com elementos filho que herdar.
 
-//Protegendo o template, com Expressão Regular, opcional não funciona como primeiro parâmetro.
+//Protegendo o template, com Expressão Regular, ? opcional não funciona como primeiro parâmetro.
 
 export abstract class View<T> {
     protected elemento : HTMLElement;
