@@ -1,5 +1,6 @@
 // Trabalhando com Herança, utilizar o 'protected' para as classes filhos acessar a classe pai que está o atributo.
 
+import { inspect } from "../decorators/inspect";
 import { logarTempoDeExecucao } from "../decorators/logar-tempo-de-execucao";
 
 //Classe abstrata 'abstract', previnindo de criar uma instância dessa classe, apenas com elementos filho que herdar.
@@ -8,9 +9,9 @@ import { logarTempoDeExecucao } from "../decorators/logar-tempo-de-execucao";
 
 export abstract class View<T> {
     protected elemento : HTMLElement;
-    private escapar = false;
+   
 
-    constructor(seletor:string, escapar?:boolean){
+    constructor(seletor:string){
         const elemento = document.querySelector(seletor)
         if(elemento){
             this.elemento = elemento as HTMLElement
@@ -18,22 +19,18 @@ export abstract class View<T> {
             throw Error(`Seletor ${seletor} não exite no DOM!!!`)
         }
       
-        if(escapar){
-            this.escapar = escapar
-        }
     }
 
     protected abstract template(model: T): string 
-    @logarTempoDeExecucao()
+    @logarTempoDeExecucao(true)
+    @inspect
     public update(model:T): void{
 
         //testando a performance.
         const t1 = performance.now()
 
         let template = this.template(model)
-        if(this.escapar){
-            template = template.replace(/<script>[\s\S]*?<\/script>/,'');
-        }
+       
         this.elemento.innerHTML = template;
 
         //comparativo da performance

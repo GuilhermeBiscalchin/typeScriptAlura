@@ -10,8 +10,8 @@ export class NegociacaoController {
     private inputQuantidade: HTMLInputElement;
     private inputValor: HTMLInputElement;
     private negociacoes = new Negociacoes();
-    private negociacoesView = new NegociacoesView('#negociacoesView',true);
-    private mensagemView = new MensagemView('#mensagemView',true);
+    private negociacoesView = new NegociacoesView('#negociacoesView');
+    private mensagemView = new MensagemView('#mensagemView');
     //private readonly DOMINGO = 0;
     //private readonly SABADO = 6;
 
