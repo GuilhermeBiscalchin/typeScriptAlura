@@ -22,8 +22,7 @@ export abstract class View<T> {
     }
 
     protected abstract template(model: T): string 
-    @logarTempoDeExecucao(true)
-    @inspect
+   
     public update(model:T): void{
 
         //testando a performance.
