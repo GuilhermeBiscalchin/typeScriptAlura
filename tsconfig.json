@@ -10,7 +10,8 @@
         "removeComments": true,
         "strictNullChecks": true,
         //para ativar o decorators no compilador.
-        "experimentalDecorators": true
+        "experimentalDecorators": true,
+        "sourceMap": true
     },
     "include": ["app/**/*"]
 }
